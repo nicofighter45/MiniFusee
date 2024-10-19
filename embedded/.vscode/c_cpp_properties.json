@@ -1,0 +1,62 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "D:/CACS/MiniFusee/embedded/include",
+                "D:/CACS/MiniFusee/embedded/src",
+                "D:/CACS/MiniFusee/embedded/.pio/libdeps/uno/Grove - LoRa Radio 433MHz 868MHz",
+                "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                "D:/CACS/MiniFusee/embedded/.pio/libdeps/uno/GY521",
+                "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                "D:/CACS/MiniFusee/embedded/.pio/libdeps/uno/Servo/src",
+                "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/variants/standard",
+                "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "D:/CACS/MiniFusee/embedded/include",
+                    "D:/CACS/MiniFusee/embedded/src",
+                    "D:/CACS/MiniFusee/embedded/.pio/libdeps/uno/Grove - LoRa Radio 433MHz 868MHz",
+                    "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    "D:/CACS/MiniFusee/embedded/.pio/libdeps/uno/GY521",
+                    "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    "D:/CACS/MiniFusee/embedded/.pio/libdeps/uno/Servo/src",
+                    "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/variants/standard",
+                    "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=60116",
+                "ARDUINO_AVR_UNO",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega328P__",
+                ""
+            ],
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++11",
+            "compilerPath": "C:/Users/Fagot/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
+            "compilerArgs": [
+                "-mmcu=atmega328p",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
