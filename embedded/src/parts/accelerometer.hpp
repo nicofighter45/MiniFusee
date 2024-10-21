@@ -10,6 +10,6 @@ private:
 public:
     Accelerometer() : sensor(0x68) {}
     void initialize();
-    Vector* actualizeAccelerationValues();
-
+    Vector *actualizeAccelerationValues();
+    bool isItOnline() { return sensor.wakeup(); }
 };

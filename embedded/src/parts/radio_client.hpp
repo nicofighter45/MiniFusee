@@ -8,14 +8,12 @@
 SoftwareSerial ss(pin_radio_1, pin_radio_2);
 RH_RF95 rf95(ss);
 
-void initialize_radio()
+bool initialize_radio()
 {
-    Serial.println("RF95 client test.");
     if (!rf95.init())
     {
-        Serial.println("init failed");
-        while (1)
-            ;
+        Serial.println("init radio failed");
+        return false;
     }
 
     // Defaults after init are 434.0MHz, 13dBm, Bw = 125 kHz, Cr = 4/5, Sf = 128chips/symbol, CRC on
@@ -26,6 +24,7 @@ void initialize_radio()
     // rf95.setTxPower(13, false);
 
     rf95.setFrequency(868.0);
+    return true;
 }
 
 void send_message(float value)
@@ -41,22 +40,34 @@ void send_message(float value)
     rf95.waitPacketSent();
 }
 
-void send_vector(Vector &vector)
+void send_vector(Vector* vector)
 {
     uint8_t len = 4;
-    float x = vector.getX();
-    float y = vector.getX();
-    float z = vector.getX();
-    uint8_t* data = new uint8_t[3 * len]; //dynamic allocation
-    memcpy(data, &x, len);
-    memcpy(data + len, &y, len);
-    memcpy(data + 2*len, &z, len);
+    float x = vector->getX();
+    float y = vector->getY();
+    float z = vector->getZ();
+    
+    uint8_t data[3 * len];
+    memcpy(&data, &x, len);
+    memcpy(&data + len, &y, len);
+    memcpy(&data + 2*len, &z, len);
+
     rf95.send(data, 3 * len);
     Serial.print("Sending packet value: ");
     Serial.print(x);
     Serial.print(" ");
     Serial.print(y);
     Serial.print(" ");
-    Serial.println(z);
-    delete[] data; //free memory
+    Serial.print(z);
+    Serial.print("  Byte: ");
+    for(int i = 0; i < 12; i ++){
+        Serial.print(data[i]);
+        Serial.print(" ");
+    }
+    Serial.println("");
+    rf95.waitPacketSent();
+}
+
+void send_byte(uint8_t* data){
+    rf95.send(data, 160);
 }

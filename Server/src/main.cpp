@@ -3,7 +3,7 @@
 #include <RH_RF95.h>
 
 // Singleton instance of the radio driver
-SoftwareSerial ss(5, 6);
+SoftwareSerial ss(2, 3);
 RH_RF95 rf95(ss);
 
 void setup()
@@ -27,29 +27,26 @@ void setup()
   rf95.setFrequency(868.0);
 }
 
-const float g = 9.81;
+const float g = 9.81 / 1000;
 
+uint8_t len = 160;
+uint8_t* buf = new uint8_t[len];
 void loop()
 {
   if (rf95.available())
   {
     // Should be a message for us now
-    uint8_t len = 12;
-    uint8_t buf[len];
     if (rf95.recv(buf, &len))
     {
-
-      float x, y, z;
-      memcpy(&x, &buf, 4);
-      memcpy(&y, &buf + 4, 4);
-      memcpy(&z, &buf + 8, 4);
-
-      Serial.print("got request: ");
-      Serial.print(x);
-      Serial.print(" ");
-      Serial.print(y);
-      Serial.print(" ");
-      Serial.println(z);
+      Serial.print("Values: ");
+      for (int i = 0; i < 40; i++)
+      {
+        float value = 0;
+        memcpy(&value, buf + i*4, 4);
+        Serial.print(value);
+        Serial.print(" ");
+      }
+      Serial.println(" ");
     }
     else
     {

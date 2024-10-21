@@ -10,7 +10,6 @@ void Accelerometer::initialize()
     {
         Serial.println("\tCould not connect to GY521: please check the GY521 address (0x68/0x69)");
     }
-
 }
 
 Vector* Accelerometer::actualizeAccelerationValues()

@@ -37,13 +37,13 @@ inline Vector operator-=(const Vector& vect1, const Vector& vect2) {
     return vect1 - vect2;
 }
 
-inline Vector operator*(const float scalar, const Vector& vect) {
+inline Vector operator*(const double scalar, const Vector& vect) {
     return Vector(scalar * vect.getX(),
                     scalar * vect.getY(),
                         scalar * vect.getZ());
 }
 
-inline Vector operator*(const Vector& vect, const float scalar) {
+inline Vector operator*(const Vector& vect, const double scalar) {
     return scalar * vect;
 }
 

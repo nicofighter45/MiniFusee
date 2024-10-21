@@ -8,7 +8,6 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "D:/CACS/MiniFusee/embedded/include",
                 "D:/CACS/MiniFusee/embedded/src",
                 "D:/CACS/MiniFusee/embedded/.pio/libdeps/uno/Grove - LoRa Radio 433MHz 868MHz",
                 "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
@@ -25,7 +24,6 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "D:/CACS/MiniFusee/embedded/include",
                     "D:/CACS/MiniFusee/embedded/src",
                     "D:/CACS/MiniFusee/embedded/.pio/libdeps/uno/Grove - LoRa Radio 433MHz 868MHz",
                     "C:/Users/Fagot/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
